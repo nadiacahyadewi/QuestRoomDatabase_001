@@ -11,19 +11,19 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface MahasiswaDao {
     @Insert
-    suspend fun insetMahasiswa(mahasiswa: Mahasiswa)
+    suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
 
     @Query("SELECT * FROM mahasiswa ORDER BY nama ASC")
     fun getAllMahasiswa() : Flow<List<Mahasiswa>>
 
     @Query("SELECT * FROM mahasiswa WHERE nim = :nim")
-    fun getMhs(nim: String) : Flow<Mahasiswa>
+    fun getMahasiswa(nim: String) : Flow<Mahasiswa>
 
     @Delete
-    suspend fun deleteMhs(mahasiswa: Mahasiswa)
+    suspend fun deleteMahasiswa(mahasiswa: Mahasiswa)
 
     @Update
-    suspend fun updateMhs(mahasiswa: Mahasiswa)
+    suspend fun updateMahasiswa(mahasiswa: Mahasiswa)
 
 }
 
