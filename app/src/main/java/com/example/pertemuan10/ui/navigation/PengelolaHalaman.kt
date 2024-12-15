@@ -13,7 +13,6 @@ import androidx.navigation.navArgument
 import com.example.pertemuan10.ui.view.mahasiswa.DetailMhsView
 import com.example.pertemuan10.ui.view.mahasiswa.HomeMhsView
 import com.example.pertemuan10.ui.view.mahasiswa.UpdateMhsView
-import com.example.praktikumpertemuan10.ui.view.mahasiswa.DestinasiInsert
 import com.example.praktikumpertemuan10.ui.view.mahasiswa.InsertMhsView
 
 
@@ -24,7 +23,7 @@ fun PengelolaHalaman(
 ){
     NavHost(
         navController = navController,
-        startDestination = DestinasiInsert.route){
+        startDestination = DestinasiHome.route){
 
         composable(
             route = DestinasiHome.route

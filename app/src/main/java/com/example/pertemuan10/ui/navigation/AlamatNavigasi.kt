@@ -20,5 +20,9 @@ object DestinasiUpdate : AlamatNavigasi {
     val routeWithArg = "$route/{$NIM}"
 }
 
+object DestinasiInsert : AlamatNavigasi{
+    override val route: String = "insert_mhs"
+}
+
 
 

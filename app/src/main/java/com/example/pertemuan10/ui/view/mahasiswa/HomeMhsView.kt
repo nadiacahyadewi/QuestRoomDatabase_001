@@ -190,7 +190,7 @@ fun HomeMhsView(
                 judul = "Daftar Mahasiswa",
                 showBackButton = false,
                 onBack = { },
-                modifier = modifier
+
             )
         },
         floatingActionButton = {

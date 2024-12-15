@@ -6,12 +6,16 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.pertemuan10.KrsApp
-
 object PenyediaViewModel {
 
     val Factory = viewModelFactory {
         initializer {
             MahasiswaViewModel(
+                krsApp().containerApp.repositoryMhs
+            )
+        }
+        initializer {
+            HomeMhsViewModel(
                 krsApp().containerApp.repositoryMhs
             )
         }

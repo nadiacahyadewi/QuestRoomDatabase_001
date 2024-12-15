@@ -170,9 +170,6 @@ fun FormMahasiswa(
     }
 }
 
-object DestinasiInsert : AlamatNavigasi{
-    override val route: String = "insert_mhs"
-}
 
 @Composable
 fun InsertBodyMhs(

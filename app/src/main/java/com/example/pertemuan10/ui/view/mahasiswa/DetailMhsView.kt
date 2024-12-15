@@ -104,7 +104,7 @@ fun ItemDetailMhs(
         Column (
             modifier = Modifier.padding(16.dp)
         ){
-            ComponentDetailMhs(judul = "NIM", isinya = mahasiswa.nama)
+            ComponentDetailMhs(judul = "NIM", isinya = mahasiswa.nim)
             Spacer(modifier = Modifier.padding(4.dp))
 
             ComponentDetailMhs(judul = "Nama", isinya = mahasiswa.nama)
@@ -189,21 +189,20 @@ fun DetailMhsView(
     onEditClick: (String) -> Unit = { },
     onDeleteClick: () -> Unit = { },
 
-){
+    ){
     Scaffold (
         topBar = {
             TopAppBar(
                 judul = "Detail Mahasiswa",
-                showBackButton = false,
+                showBackButton = true,
                 onBack = onBack,
-                modifier = modifier
+
             )
         },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    onEditClick(viewModel.detailUiState.value.detailUiEvent.nim)
-                },
+                    onEditClick(viewModel.detailUiState.value.detailUiEvent.nim)},
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(16.dp)
             ) {
