@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pertemuan10.data.entity.Mahasiswa
 import com.example.pertemuan10.repository.RepositoryMhs
+import com.example.pertemuan10.ui.navigation.DestinasiUpdate
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -21,7 +22,7 @@ class UpdateMhsViewModel (
     var updateUIState by mutableStateOf(MhsUIState())
         private set
 
-    private val _nim: String = checkNotNull(savedStateHandle[DestinasiEdit.NIM])
+    private val _nim: String = checkNotNull(savedStateHandle[DestinasiUpdate.NIM])
 
     init {
         viewModelScope.launch {
@@ -46,7 +47,7 @@ class UpdateMhsViewModel (
             jeniskelamin = if (event.jeniskelamin.isNotEmpty()) null else "Jenis Kelamin tidak boleh kosong",
             alamat = if (event.alamat.isNotEmpty()) null else "Alamat tidak boleh kosong",
             kelas = if (event.kelas.isNotEmpty()) null else "Kelas tidak boleh kosong",
-            angkatan = if (event.angkatan.isNotEmpty()) null else "Angkatan tidak boleh kosong",
+            angkatan = if (event.angkatan.isNotEmpty()) null else "Angkatan tidak boleh kosong"
         )
 
         updateUIState = updateUIState.copy(isEntryValid = errorState)
@@ -77,9 +78,9 @@ class UpdateMhsViewModel (
             snackbarMessage = "Data gagal diupdate"
         )
     }
+    }
     fun resetSnackBarMessage(){
         updateUIState = updateUIState.copy(snackbarMessage = null)
-    }
 }
 
 fun Mahasiswa.toUIStateMhs(): MhsUIState = MhsUIState(
